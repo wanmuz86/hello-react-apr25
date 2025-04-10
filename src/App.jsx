@@ -4,12 +4,13 @@ import Main from "./components/Main"
 
 function App() {  
   return (
-    <>
+   <>
     {/* Calling the components in App.jsx */}
      <Header/>
      <Main/>
      <Footer/>
     </>
+  
   )
 }
 
