@@ -2,7 +2,12 @@ import React, { useState } from 'react'
 
 // Retrieve the props / configuration passed to the component
 //object destrucring of the props, to receive it in variable min
-const Counter = ({min}) => {
+
+// Pass the initialValue as prop [2]
+
+// Pass the maximum value as prop [3] // Message = Number cannot be bigger than max
+
+const Counter = ({min, initialValue, max}) => {
    
 
     // Create a state variable to store the value of the counter
@@ -13,14 +18,18 @@ const Counter = ({min}) => {
     // setCounter -> to set the value of the counter [setter]
     // useState(0) -> 0 is the initial value of the counter
 
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(initialValue)
 
     const [message, setMessage] = useState('') 
 
     
     const increment = () => {
-        setCounter(counter + 1) // Increment the value of counter by 1
-        setMessage('') // Reset the message
+        if (counter >=max){
+            setMessage(`Number cannot be bigger than ${max}`)
+        } else {
+            setCounter(counter + 1) // Increment the value of counter by 1
+            setMessage('') // Reset the message
+        }
     }
 // Exercise: WHen user try to decrement the counter at 0, 
 // a message should be shown on the UI, eg below h4, 
@@ -33,6 +42,7 @@ const Counter = ({min}) => {
         }
         else {
             setCounter(counter-1) // Decrement the value of counter by 1
+            setMessage('') // Reset the message
         }
     }
 
