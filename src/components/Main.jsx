@@ -10,7 +10,14 @@ const Main = () => {
             This is my main page
         </h2>
         <hr />
-        <Counter/>
+        {/* Passing data/configuration (props) to the component */}
+        <Counter min={0}/>
+        <hr />
+        <Counter min={-5}/>
+        <hr />
+        <Counter min={-10}/>
+        <hr />
+        <Counter min={-100}/>
     </div>
   )
 }

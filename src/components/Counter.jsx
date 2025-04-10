@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
-const Counter = () => {
+// Retrieve the props / configuration passed to the component
+//object destrucring of the props, to receive it in variable min
+const Counter = ({min}) => {
+   
 
     // Create a state variable to store the value of the counter
     // A state is a variable that the value  change and reflected in the UI
@@ -25,8 +28,8 @@ const Counter = () => {
 
 
     const decrement = () => {
-        if (counter <= 0){
-            setMessage('Number cannot be less than 0')
+        if (counter <= min){
+            setMessage(`Number cannot be less than ${min}`)
         }
         else {
             setCounter(counter-1) // Decrement the value of counter by 1
