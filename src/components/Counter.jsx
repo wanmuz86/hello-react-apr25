@@ -55,7 +55,7 @@ const Counter = ({min, initialValue, max}) => {
     <div>
         <h3>Counter</h3>
         <h4>{counter}</h4>
-        <p>{message}</p>
+        <p style={{color:'red'}}>{message}</p>
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
         <button onClick={reset}>Reset</button>
