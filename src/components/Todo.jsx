@@ -10,10 +10,19 @@ const Todo = () => {
        setTodos([...todos, item]) // add the new item to the array using spread operator
 
     }
+     const handleDelete = (item) => {
+
+        const newTodos = todos.filter(val=> val !== item)
+        setTodos(newTodos) // update the state with the new array
+     }
+
   return (
     <div>
-        <AddTodo retrieveItem={handleAdd}/>
-        <List todoList={todos}/>
+        <AddTodo retrieveItem={handleAdd}/>{
+            todos.length > 0 ?  <List todoList={todos} deleteItem={handleDelete}/>
+            : <p style={{fontStyle:'italic'}}>To do List is empty</p>
+        }
+       
     </div>
   )
 }

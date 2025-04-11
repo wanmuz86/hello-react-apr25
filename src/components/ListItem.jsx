@@ -1,10 +1,14 @@
 import React from 'react'
 
-const ListItem = () => {
+const ListItem = ({item, deleteItem}) => {
+    const handleDelete = () => {
+        // Call the function passed from the parent component
+        deleteItem(item)
+    }
   return (
     <div>
-        <p>This is item 
-            <button>Delete</button>
+        <p> {item}
+            <button onClick={handleDelete}>Delete</button>
             </p>
     </div>
   )

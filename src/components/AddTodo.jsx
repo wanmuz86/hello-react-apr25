@@ -5,6 +5,7 @@ const AddTodo = ({retrieveItem}) => {
     const handleClick = () => {
      
         retrieveItem(item) // pass the item to the parent component
+        setItem('') // clear the input field
     }
 
   return (
