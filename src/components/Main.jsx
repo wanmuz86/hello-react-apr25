@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Counter from './Counter'
 import Child from './Child'
 import Todo from './Todo'
+import Product from './Product'
 
 const Main = () => {
     // A state to hold the value of the input field
@@ -91,6 +92,9 @@ const Main = () => {
         <hr />
         <h2>Todo List demo</h2>
         <Todo/>
+        <hr/>
+        <h2>Product Page</h2>
+        <Product/>
     </div>
   )
 }
