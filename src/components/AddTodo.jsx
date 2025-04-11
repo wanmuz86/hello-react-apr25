@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
-const AddTodo = () => {
+const AddTodo = ({retrieveItem}) => {
     const [item, setItem] = useState('')
     const handleClick = () => {
-        console.log(item)
+     
+        retrieveItem(item) // pass the item to the parent component
     }
 
   return (

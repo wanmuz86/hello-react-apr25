@@ -1,12 +1,11 @@
 import React from 'react'
 import ListItem from './ListItem'
 
-const List = () => {
+const List = ({todoList}) => {
   return (
     <div>
-        <ListItem/>
-        <ListItem/>
-        <ListItem/>
+        {
+            todoList.map((item,index) => <ListItem key={index}></ListItem>)}
     </div>
   )
 }
