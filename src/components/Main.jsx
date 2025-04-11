@@ -7,6 +7,8 @@ const Main = () => {
     // setName - to set the value of the input field [setter]
     // useState('') - '' is the initial value of the input field
     const [name,setName] = useState('')
+    const [age,setAge] = useState('')
+    const [message,setMessage] = useState('')
    
   return (
     <div>
@@ -31,7 +33,22 @@ const Main = () => {
         <input type="text" placeholder='Enter your name' 
         value={name} 
         onChange={(e)=>setName(e.target.value)} />
-        <button onClick={()=>alert(`Hello ${name}`)}>Click me</button>
+        
+        {/* Add input to retrieve the age */}
+        <input type="text" placeholder='Enter your age'
+        value={age}
+        onChange={(e)=>setAge(e.target.value)}
+        />
+        <p>{message}</p>
+        {
+            // Ternary operator or Conditional rendering
+            // If ... then... if not
+
+            age < 18 ? 
+            <p>You cannot watch the movie</p> :
+            <p>You can watch the movie</p>
+        }
+        <button onClick={()=>setMessage(`Hello ${name}, you are ${age} years old`)}>Click me</button>
 
     </div>
   )
