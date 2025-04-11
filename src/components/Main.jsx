@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Counter from './Counter'
+import Child from './Child'
 
 const Main = () => {
     // A state to hold the value of the input field
@@ -9,9 +10,19 @@ const Main = () => {
     const [name,setName] = useState('')
     const [age,setAge] = useState('')
     const [message,setMessage] = useState('')
+
+    const [childMessage,setChildMessage] = useState('')
     
     // Readonly
     const scores = [70,90,100,80,60];
+
+    const handleMessage = (message) => {
+        
+        // This function will be called when button in child is pressed
+        // ANd it will set the message to the state variable
+        setChildMessage(message)
+
+    }
    
   return (
     <div>
@@ -69,7 +80,13 @@ const Main = () => {
                 scores.map((val,index)=> <li key={index}>{val}</li>)
             }
         </ul>
-
+        <hr />
+        <Child  retrieveMessage={handleMessage}/>
+        {
+            // Conditional rendering
+            // If childMessage is not empty, show the message
+        childMessage !== '' && <p>{childMessage}</p>
+        }
     </div>
   )
 }
