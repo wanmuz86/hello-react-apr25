@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Counter from './Counter'
 import Child from './Child'
+import Todo from './Todo'
 
 const Main = () => {
     // A state to hold the value of the input field
@@ -87,6 +88,9 @@ const Main = () => {
             // If childMessage is not empty, show the message
         childMessage !== '' && <p>{childMessage}</p>
         }
+        <hr />
+        <h2>Todo List demo</h2>
+        <Todo/>
     </div>
   )
 }
