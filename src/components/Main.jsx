@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Counter from './Counter'
 
 const Main = () => {
+    // A state to hold the value of the input field
+    // name - to retrieve the value of the input field [getter]
+    // setName - to set the value of the input field [setter]
+    // useState('') - '' is the initial value of the input field
+    const [name,setName] = useState('')
+   
   return (
     <div>
         <h2 
@@ -18,6 +24,15 @@ const Main = () => {
         <Counter min={-10} initialValue={30} max={50}/>
         <hr />
         <Counter min={-100} initialValue={-50} max={0} />
+
+        <hr />
+        <h2>My form</h2>
+
+        <input type="text" placeholder='Enter your name' 
+        value={name} 
+        onChange={(e)=>setName(e.target.value)} />
+        <button onClick={()=>alert(`Hello ${name}`)}>Click me</button>
+
     </div>
   )
 }
