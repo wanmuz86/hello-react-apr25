@@ -9,6 +9,9 @@ const Main = () => {
     const [name,setName] = useState('')
     const [age,setAge] = useState('')
     const [message,setMessage] = useState('')
+    
+    // Readonly
+    const scores = [70,90,100,80,60];
    
   return (
     <div>
@@ -49,6 +52,23 @@ const Main = () => {
             <p>You can watch the movie</p>
         }
         <button onClick={()=>setMessage(`Hello ${name}, you are ${age} years old`)}>Click me</button>
+        <hr />
+        <h2>Score for today</h2>
+        <ul>
+            {
+                // map function
+                // foreach val in scores, show li with val
+                // We need to add key, for react to identify each element
+                // It needs to be unique
+
+                //Option 1
+                // scores.map(val=> <li key={val}>{val}</li>)
+
+                // Option 2
+                // If there is no unique item in the data used index as key
+                scores.map((val,index)=> <li key={index}>{val}</li>)
+            }
+        </ul>
 
     </div>
   )
